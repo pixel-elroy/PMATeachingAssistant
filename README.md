@@ -111,16 +111,7 @@ GROQ_API_KEY=your_groq_api_key_here
 LLM_MODEL=llama-3.3-70b-versatile
 ```
 
-The real API key belongs only in `.env`. The `.env.example` file contains placeholder values for sharing the project without exposing credentials.
-
-A typical `.gitignore` excludes:
-
-```text
-.env
-.venv/
-__pycache__/
-*.pyc
-```
+The real API key belongs only in `.env`.
 
 ## Teaching Context
 
@@ -239,6 +230,11 @@ http://127.0.0.1:5500
 ```
 
 The frontend is configured to send API requests to the backend at `http://127.0.0.1:8000`.
+
+To run the FastAPI backend, use the following command:
+```text
+uvicorn main:app --reload
+```
 
 ## Limitations
 
