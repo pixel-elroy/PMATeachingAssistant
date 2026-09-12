@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Teaching Assistant - Probability Models and Applications</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<div class="corner-decor top-left"></div>
+<div class="corner-decor top-right"></div>
+<div class="corner-decor bottom-left"></div>
+<div class="corner-decor bottom-right"></div>
+
+<div class="main-wrapper">
+    <header class="app-title-header">
+        <h1>// PROBABILITY MODELS &amp; APPLICATIONS TEACHING ASSISTANT</h1>
+        <p class="subtitle">By Elroy J Jose [EE26MT005]</p>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="session-tabs" id="sessionTabs"></div>
+
+            <div class="memory-control">
+                <label for="memoryDepth">
+                    Memory: <span id="memoryDepthValue">5 exchanges</span>
+                </label>
+                <input type="range" id="memoryDepth" min="0" max="20" value="5" step="1">
+            </div>
+
+            <div class="header-actions">
+                <button id="newChatBtn" title="Create New Chat (+)">+ New Chat</button>
+                <button id="clearBtn" title="Clear Current Chat">Clear</button>
+                <span class="status-dot" title="System Online"></span>
+            </div>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="message ai-message">
+                Welcome to Probability Models and Applications (PMA). What stochastic
+                process or random variable are we tackling today?
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="userInput" placeholder="Ask about Markov chains, Poisson processes, etc..." autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
