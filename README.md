@@ -51,20 +51,6 @@ The project development plan is illustrated below.
 
 The plan outlines the major stages of development, from defining the teaching requirements and designing the application architecture to implementing the backend, frontend, LLM integration, and testing.
 
-## Technology Stack
-
-| Component | Technology |
-|---|---|
-| Backend framework | FastAPI |
-| ASGI server | Uvicorn |
-| Language | Python |
-| LLM provider | Groq API |
-| Frontend | HTML, CSS, JavaScript |
-| Mathematical rendering | KaTeX |
-| Markdown rendering | Marked.js |
-| Client-side storage | Browser `localStorage` |
-| Configuration | `.env` via `python-dotenv` |
-
 ## Requirements
 
 The project requires:
@@ -96,90 +82,6 @@ LLM_MODEL=llama-3.3-70b-versatile
 
 The real API key belongs only in `.env`.
 
-## Teaching Context
-
-The `context.md` file acts as the teaching specification for the agent. It defines the assistant’s:
-
-- Subject area and topic boundaries
-- Teaching persona
-- Intended academic level
-- Preferred explanation style
-- Step-by-step problem-solving approach
-- Use of intuitive explanations and examples
-- Mathematical formatting conventions
-
-This separation between application code and teaching instructions makes it possible to modify the assistant’s pedagogical behavior without changing the backend implementation.
-
-## Backend API
-
-The FastAPI service exposes the following endpoints.
-
-### `POST /api/start`
-
-Returns an initial welcome message for the teaching assistant.
-
-### `POST /api/chat`
-
-Accepts a conversation history and returns a generated teaching response.
-
-Example request:
-
-```json
-{
-  "messages": [
-    {
-      "role": "user",
-      "content": "Explain almost-sure convergence."
-    }
-  ]
-}
-```
-
-Example response:
-
-```json
-{
-  "reply": "Generated teaching response..."
-}
-```
-
-The supported message roles are `user` and `assistant`.
-
-## Application Workflow
-
-1. The user opens the browser interface.
-2. The frontend displays the current chat session.
-3. The user submits a PMA-related question.
-4. The frontend sends the selected conversation history to `/api/chat`.
-5. The backend combines the conversation with the instructions from `context.md`.
-6. The backend requests a response from the configured Groq model.
-7. The generated answer is returned to the frontend.
-8. The frontend renders the response as Markdown with KaTeX mathematical notation.
-9. The conversation is stored locally in the browser.
-
-## Chat Sessions and Memory
-
-The frontend supports multiple chat sessions. Each session maintains its own conversation history.
-
-- **New Chat** creates a separate conversation.
-- Chat tabs switch between existing sessions.
-- Closing a session removes it from the frontend’s session list.
-- The application supports up to five sessions.
-- The memory setting controls how many previous exchanges are sent to the model.
-- Chat sessions and memory preferences are stored in browser `localStorage`.
-- The **Clear** action removes the stored messages from the current session.
-
-This design allows the user to maintain separate discussions for different PMA topics while controlling how much earlier context is supplied to the model.
-
-## Mathematical and Markdown Rendering
-
-The assistant is designed to return mathematical content using LaTeX notation. The frontend uses:
-
-- **Marked.js** for Markdown parsing
-- **KaTeX** for mathematical rendering
-
-This supports content such as equations, matrices, fractions, summations, probability expressions, and step-by-step derivations.
-
 ## Running the Application
 
 The application consists of two locally running parts:
@@ -206,12 +108,4 @@ To run the FastAPI backend, use the following command:
 ```text
 uvicorn main:app --reload
 ```
-
-## Limitations
-
-- The quality of explanations depends on the selected Groq model.
-- The agent may occasionally produce incorrect mathematical statements and should not replace textbook verification or instructor guidance.
-- The frontend currently relies on CDN-hosted libraries.
-- Conversation data is stored in browser `localStorage`, not in a central database.
-- The application is primarily designed for local or demonstration use.
-- Production deployment would require stronger CORS restrictions, secure secret management, authentication, and additional error handling.
+Once the backend is up and running, open the index.html file using a browser of your choice.
