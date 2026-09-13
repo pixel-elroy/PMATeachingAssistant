@@ -1,3 +1,4 @@
+
 # Probability Models and Applications — AI Teaching Agent
 
 ## Overview
@@ -21,35 +22,11 @@ The application combines a browser-based chat interface, a FastAPI backend, and 
 
 ## System Architecture
 
-The application follows a simple client–server architecture:
+The application follows a simple client–server architecture.
 
-```text
-+-------------------------+
-|      Web Frontend       |
-|  index.html             |
-|  script.js              |
-|  style.css              |
-+------------+------------+
-             |
-             | HTTP requests
-             v
-+-------------------------+
-|      FastAPI Backend    |
-|       main.py           |
-|                         |
-|  - Loads context.md     |
-|  - Reads .env settings  |
-|  - Receives chat history|
-|  - Calls Groq API       |
-|  - Returns model reply  |
-+------------+------------+
-             |
-             | API request
-             v
-+-------------------------+
-|       Groq LLM API     |
-+-------------------------+
-```
+### Architecture Diagram
+
+![Project Architecture](project_architecture.png)
 
 The frontend is responsible for the user interface, session management, message history, and rendering. The backend prepares the prompt using the teaching context and forwards the conversation to the selected Groq model.
 
@@ -62,11 +39,21 @@ Teaching-Agent/
 ├── script.js           # Frontend logic and API communication
 ├── style.css           # Frontend styling
 ├── context.md          # Teaching persona and PMA instructions
+├── project_architecture.png  # System architecture diagram
+├── project_plan.png    # Project development plan
 ├── .env                # Local configuration and API key
 ├── .env.example        # Example environment configuration
 ├── .gitignore          # Files excluded from version control
 └── README.md           # Project documentation
 ```
+
+## Project Plan
+
+The project development plan is illustrated below.
+
+![Project Plan](project_plan.png)
+
+The plan outlines the major stages of development, from defining the teaching requirements and designing the application architecture to implementing the backend, frontend, LLM integration, and testing.
 
 ## Technology Stack
 
@@ -232,6 +219,7 @@ http://127.0.0.1:5500
 The frontend is configured to send API requests to the backend at `http://127.0.0.1:8000`.
 
 To run the FastAPI backend, use the following command:
+
 ```text
 uvicorn main:app --reload
 ```
