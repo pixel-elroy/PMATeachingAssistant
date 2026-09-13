@@ -184,19 +184,6 @@ The assistant is designed to return mathematical content using LaTeX notation. T
 
 This supports content such as equations, matrices, fractions, summations, probability expressions, and step-by-step derivations.
 
-## Example Use Cases
-
-The teaching agent can be used for questions such as:
-
-- Explaining the difference between a random variable and a stochastic process
-- Solving Markov-chain steady-state problems
-- Explaining almost-sure, in-probability, and mean-square convergence
-- Deriving probability distributions and expectation formulas
-- Understanding conditional expectation and conditional probability
-- Working through stochastic-process examples
-- Reviewing definitions, theorems, and proof ideas
-- Asking follow-up questions about a previous derivation
-
 ## Running the Application
 
 The application consists of two locally running parts:
@@ -232,22 +219,3 @@ uvicorn main:app --reload
 - Conversation data is stored in browser `localStorage`, not in a central database.
 - The application is primarily designed for local or demonstration use.
 - Production deployment would require stronger CORS restrictions, secure secret management, authentication, and additional error handling.
-
-## Future Improvements
-
-Possible extensions include:
-
-- Improved mathematical rendering and table formatting
-- Streaming model responses
-- Persistent server-side conversation storage
-- User authentication
-- File and lecture-note integration
-- Topic-specific learning paths
-- Automatic quizzes and practice problems
-- Answer verification and theorem-checking workflows
-- Better error reporting and model fallback handling
-- Deployment as a hosted educational service
-
-## Project Status
-
-The project is a functional prototype of a subject-specific AI teaching agent. It demonstrates the integration of a web interface, FastAPI, Groq-based language generation, configurable teaching instructions, session management, and mathematical response rendering in a single educational application.
