@@ -39,11 +39,7 @@ Teaching-Agent/
 ├── script.js           # Frontend logic and API communication
 ├── style.css           # Frontend styling
 ├── context.md          # Teaching persona and PMA instructions
-├── project_architecture.png  # System architecture diagram
-├── project_plan.png    # Project development plan
-├── .env                # Local configuration and API key
 ├── .env.example        # Example environment configuration
-├── .gitignore          # Files excluded from version control
 └── README.md           # Project documentation
 ```
 
