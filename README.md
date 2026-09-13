@@ -109,3 +109,9 @@ To run the FastAPI backend, use the following command:
 uvicorn main:app --reload
 ```
 Once the backend is up and running, open the index.html file using a browser of your choice.
+
+## Working Web Application
+
+The working web application is shown in the screenshot below.
+
+![Working Web Application](webpage_working.png)
