@@ -5,9 +5,9 @@ from typing import Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from groq import Groq
-
 
 load_dotenv()
 
@@ -172,11 +172,13 @@ async def chat(payload: ChatRequest):
         "reply": reply
     }
 
+app.mount("/", StaticFiles(directory=".", html=True), name="frontend")
+
 if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "main:app",
+        "CSPML_LAB_05_EE26MT005:app",
         host="127.0.0.1",
         port=8000,
         reload=True
