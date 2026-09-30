@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PMA Teaching Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<div class="corner-decor top-left"></div>
+<div class="corner-decor top-right"></div>
+<div class="corner-decor bottom-left"></div>
+<div class="corner-decor bottom-right"></div>
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>// PMA AGENT PORTAL</h2>
+        <p class="subtitle">Probability Models & Applications Teaching Assistant</p>
+        
+        <div class="auth-form">
+            <input type="email" id="authEmail" placeholder="student@university.edu" autocomplete="email">
+            <input type="password" id="authPassword" placeholder="Password" autocomplete="current-password">
+            
+            <div class="auth-buttons">
+                <button id="loginBtn" class="primary-btn">Log In</button>
+                <button id="registerBtn" class="secondary-btn">Register</button>
+            </div>
+            <p id="authError" class="error-text" style="color: #ff6b6b; font-size: 13px; margin-top: 15px; text-align: center;"></p>
+        </div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
