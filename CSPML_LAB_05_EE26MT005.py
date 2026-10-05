@@ -14,7 +14,7 @@ from pydantic import BaseModel, EmailStr
 from groq import Groq
 import psycopg2
 from psycopg2.extras import RealDictCursor
-from jose import JWTError, jwt
+from jose import JWTError
 import bcrypt
 
 load_dotenv()
